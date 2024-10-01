@@ -20,7 +20,7 @@ body {
     overflow: hidden;
     position: fixed;
     top: 0;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -67,21 +67,15 @@ body {
     color: #f4f4f4;
 }
 
-.dark-section h2 {
-    font-size: 40px;
+.dark-section h2, .light-section h2 {
+    font-size: 2.5rem;
+    text-align: left;
 }
 
-.light-section h2 {
-    font-size: 40px;
-}
-
-.dark-section p {
+.dark-section p, .light-section p {
     margin-top: 10px;
     font-size: 18px;
-}
-
-.light-section p {
-    font-size: 18px;
+    /* text-align: center; */
 }
 
 .container {
@@ -95,10 +89,11 @@ body {
     align-items: flex-start;
     justify-content: space-between;
     margin: 50px 0px 30px 0px;
+    flex-wrap: wrap;
 }
 
-.profile-about-container p{
-    color: grey;   
+.profile-about-container p {
+    color: grey;
     padding: 5px;
 }
 
@@ -107,21 +102,29 @@ body {
     max-width: 35%;
     flex: 1;
     text-align: center;
-    padding-right: 20px;
-    padding-left: 150px;
+    padding: 0 20px;
+}
+
+.profile-container h2{
+    text-align: center;
+}
+
+.profile-container p{
+    margin: 0;
 }
 
 .about-me-container {
     max-width: 55%;
-    margin: 0 auto;
     flex: 2;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.about-me-container h2{
+.about-me-container h2 {
     margin-bottom: 5px;
 }
 
-.about-me-container p{
+.about-me-container p {
     color: white;
 }
 
@@ -202,10 +205,6 @@ body {
     position: relative;
 }
 
-.h2 {
-    font-size: 40px;
-}
-
 .timeline-content h3 {
     font-size: 24px;
     margin-bottom: 5px;
@@ -229,4 +228,60 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 18px;
+    }
+
+    .profile-container,
+    .about-me-container {
+        max-width: 100%;
+        flex: 1 1 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-me-container h2 {
+        font-size: 30px;
+    }
+
+    .profile-about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-me-container h2 {
+        font-size: 25px;
+    }
+
+    .section {
+        padding: 30px 15px;
+    }
+
+    .timeline-content h3 {
+        font-size: 20px;
+    }
 }
